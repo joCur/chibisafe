@@ -20,9 +20,9 @@ services:
         hostname: chibisafe
         restart: unless-stopped
         environment:
-            OVERWRITE_SETTINGS: "true"
+            OVERWRITE_SETTINGS: true
             CHUNK_SIZE: 90
-            ROUTE_PREFIX: /api
+            ROUTE_PREFIX: "/api"
             RATE_LIMIT_WINDOW: 2
             RATE_LIMIT_MAX: 5
             SECRET: "IZRnWW4+utvlmfWLQuNoiZaj6a3sNoZ6D4wFyemjoPs=" #<--- "openssl rand -base64 32" To Generate.
@@ -33,17 +33,17 @@ services:
             META_TWITTER_HANDLE: "@jcurth"
             BLOCKED_EXTENSIONS: ".msi"
             SERVER_PORT: 5000
-            DOMAIN: http://localhost:5000 #"https://images.curth.dev" #Change this to the domain you are hosting this on or you will get network errors when trying to login.
+            DOMAIN: "https://images.curth.dev" #Change this to the domain you are hosting this on or you will get network errors when trying to login.
             SERVICE_NAME: curth
             MAX_SIZE: 72727
-            GENERATE_THUMBNAILS: "true"
-            GENERATE_ZIPS: "true"
+            GENERATE_THUMBNAILS: true
+            GENERATE_ZIPS: true
             STRIP_EXIF: "true" #Recommended to keep true.
-            SERVE_WITH_NODE: "true"
+            SERVE_WITH_NODE: true
             GENERATED_FILENAME_LENGTH: 10
             GENERATED_ALBUM_LENGTH: 6
-            PUBLIC_MODE: "false"
-            USER_ACCOUNTS: "true"
+            PUBLIC_MODE: true
+            USER_ACCOUNTS: true
             DB_CLIENT: "sqlite3" #You probably should be running a external DB, but there is one already part of the container. Also there is an issue with Chibisafe duplicating db entries in docker, but seems to work fine in production.
             DB_HOST: ""
             DB_USER: ""
