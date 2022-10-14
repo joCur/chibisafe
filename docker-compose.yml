@@ -3,7 +3,7 @@ version: "3.7"
 networks: #Add to my Nginx Network in Docker. Just makes life easier for me, and you may need to change this depending on what reverse proxy you are using.
     default:
         external:
-            name: "nginxproxymanager_default"
+            name: "proxy"
 
 services:
     chibisafe:
@@ -25,20 +25,20 @@ services:
             ROUTE_PREFIX: /api
             RATE_LIMIT_WINDOW: 2
             RATE_LIMIT_MAX: 5
-            SECRET: #"wowfcgMHqZHwOIMLadWrKu3liyqPOOILpDLSDvuxq3YGhJmiZXJCVpnF96l11WfR" <--- "openssl rand -base64 32" To Generate.
+            SECRET: "IZRnWW4+utvlmfWLQuNoiZaj6a3sNoZ6D4wFyemjoPs=" #<--- "openssl rand -base64 32" To Generate.
             MAX_LINKS_PER_ALBUM: 5
             META_THEME_COLOR: "#20222b"
             META_DESCRIPTION: "Blazing fast file uploader edited by @rapphy243!🚀"
             META_KEYWORDS: "chibisafe,upload,uploader,file,vue,images,ssr,file uploader"
-            META_TWITTER_HANDLE: "@rapphy243"
+            META_TWITTER_HANDLE: "@jcurth"
             BLOCKED_EXTENSIONS: ".msi"
             SERVER_PORT: 5000
-            DOMAIN: "https://safe.rapph.dev" #Change this to the domain you are hosting this on or you will get network errors when trying to login.
+            DOMAIN: "https://images.curth.dev" #Change this to the domain you are hosting this on or you will get network errors when trying to login.
             SERVICE_NAME: rapphsafe
             MAX_SIZE: 72727
             GENERATE_THUMBNAILS: "true"
             GENERATE_ZIPS: "true"
-            STRIP_EXIF: "false" #Recommended to keep true.
+            STRIP_EXIF: "true" #Recommended to keep true.
             SERVE_WITH_NODE: "true"
             GENERATED_FILENAME_LENGTH: 10
             GENERATED_ALBUM_LENGTH: 6
